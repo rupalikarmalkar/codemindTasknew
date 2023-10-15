@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Login</h1>
+          <h6>please inter email & password !!</h6>
+
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+              <label for="email">Email </label>
+              <input type="email" class="form-control" id="email" formControlName="email">
+
+              <span class="text-danger" *ngIf="loginForm.get('email')!.errors 
+                         && loginForm.get('email')!.hasError('required') ">* Required</span>
+
+
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" formControlName="password" id="password">
+
+
+              <span class="text-danger" *ngIf="loginForm.get('Password')!.errors 
+                          && loginForm.get('Password')!.hasError('required') ">* Required</span>
+
+            </div><br>
+
+            <button type="submit" class="btn btn-primary">Login</button><br>
+            <a routerLink="/sign-up" style="color: white;">Already User ? Click to Signup !!</a><br>
+          </form>
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

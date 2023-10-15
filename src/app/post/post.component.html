@@ -1,0 +1,20 @@
+<div class="contenair" class="text-center">
+    <div>
+        <div> <textarea rows="3" cols="80" placeholder="What's on your mind Rupali?"></textarea>
+        </div>
+        <div style="font-weight: bold;font-size: 30px; margin-right: 350px;">{{name}}</div>
+
+        <span>Post</span>
+        <div>
+            <img *ngFor="let url of urls" [src]="url" height="300px"> <br>
+            <input type="file" (change)="onselect($event)" multiple>
+        </div>
+    </div>
+    <div>
+        <button (click)="likeCounter()">Like &nbsp;{{like}}
+        </button><i class="fa-sharp fa-solid fa-heart" style="color: red;"></i>
+        <button (click)="DislikeCounter()">Dislike &nbsp;{{Dislike}}</button>
+        <i class="fa-sharp fa-regular fa-heart" style="color: red;"></i>
+
+    </div>
+</div>
